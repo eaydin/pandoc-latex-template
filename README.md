@@ -1,5 +1,51 @@
 <img src="icon.png" align="right" height="110"/>
 
+# eaydin version
+
+I've added some custom variables to the Eisvogel template. Keeping the original README below especially (along with the whole repo of the version I've forked from). The options I've added (currently) are listed along with the already existing ones below:
+
+```
+---
+title: "The title"
+subtitle: "The subtitle"
+author: [M. Emre Ayın, Galileo Galilei]
+authors-on-title: true
+date: "15 June 2019"
+document-revision: "0.3.5"
+keywords: [Uptime, Telescopes, Runtime Compilation]
+lang: "en"
+titlepage: true
+titlepage-color: "FFFFFF"
+titlepage-text-color: "00000A"
+titlepage-rule-color: "10000A"
+titlepage-rule-height: 2
+toc-own-page: true
+toc: true
+logo: somelogo.png
+papersize: a4
+total-page-number: true
+total-pages-on-title: true
+# header-left:
+# header-center: central
+# header-right: None
+footer-left: "Other than Authors?"
+# footer-center: None
+# footer-right: None
+logo-width: 150
+...
+```
+
+Recommended command to create PDF:
+
+First copy the `ea_eisvogel.tex` file to `~/.pandoc/templates/ea_eisvogel.latex`. Then run the following with `test.md` being your markdown file:
+
+```
+pandoc test.md -o test.pdf --from markdown --template ea_eisvogel --listings --number-sections
+```
+
+We should include Biblatex support soon.
+
+
 # Eisvogel
 
 [![Build Status](https://travis-ci.org/Wandmalfarbe/pandoc-latex-template.svg?branch=master)](https://travis-ci.org/Wandmalfarbe/pandoc-latex-template)
