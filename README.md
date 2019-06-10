@@ -40,6 +40,7 @@ lof-own-page: true
 lof-title: "Custom Title For List of Figures"
 figure-name: "Yet Another Figure"
 url-style-same: false
+lof-no-color: true
 ...
 ```
 
