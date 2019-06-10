@@ -44,7 +44,21 @@ First copy the `ea_eisvogel.tex` file to `~/.pandoc/templates/ea_eisvogel.latex`
 pandoc test.md -o test.pdf --from markdown --template ea_eisvogel --listings --number-sections
 ```
 
-We should include Biblatex support soon.
+In order to create citations, use a BibTex database and provide a valid csl. The CSL file should be located in the running directory (Probably `~/.csl` would work too).
+
+In the documents, cite to references with `[@some-ref-id]` notation. This should use the CSL format to show the citations.
+
+The command below will produce an output with relavent bibliography databases:
+
+```
+pandoc report.md -o report.pdf --from markdown --template ea_eisvogel --listings --number-sections --bibliography=report.bib --csl=chicago.csl
+```
+
+This assumes we have a report.bib in the folder with BibTex style references, and chicago.csl for the Citation Style Language we want to use.
+
+If you want to name the references section, simply give the last section name the one you want. When it has no text in it, it will not number the section and use it as a header for the references.
+
+Please note that you need to install `pandoc-citeproc` package in order to generate citations.
 
 
 # Eisvogel
