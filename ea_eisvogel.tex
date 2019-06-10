@@ -752,54 +752,65 @@ $endif$
 %%
 
 $if(titlepage)$
-\begin{titlepage}
-\newgeometry{left=6cm}
-$if(titlepage-color)$
-\definecolor{titlepage-color}{HTML}{$titlepage-color$}
-\newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
-$endif$
-\newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
-\begin{flushleft}
-\noindent
-\\[-1em]
-\color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$5F5F5F$endif$}
-\makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$435488$endif$]{1.3\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
-\par
-\noindent
+    \begin{titlepage}
+    \newgeometry{left=6cm}
+    $if(titlepage-color)$
+    \definecolor{titlepage-color}{HTML}{$titlepage-color$}
+    \newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
+    $endif$
+    \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
+    \begin{flushleft}
+    \noindent
+    \\[-1em]
+    \color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$5F5F5F$endif$}
+    \makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$435488$endif$]{1.3\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
+    \par
+    \noindent
 
-{ \setstretch{1.4}
-\vfill
-\noindent {\huge \textbf{\textsf{$title$}}}
-$if(subtitle)$
-\vskip 1em
-{\Large \textsf{$subtitle$}}
-$endif$
-\vskip 2em
-\noindent
-$if(authors-on-title)$
-{\large \textsf{$for(author)$$author$$sep$, $endfor$}
-}
-$endif$
-\vfill
+    { \setstretch{1.4}
+    \vfill
+    \noindent {\huge \textbf{\textsf{$title$}}}
+    $if(subtitle)$
+    \vskip 1em
+    {\Large \textsf{$subtitle$}}
+    $endif$
 
-$if(logo)$
-\noindent
-\includegraphics[width=$if(logo-width)$$logo-width$$else$100$endif$pt, left]{$logo$}
-$endif$
+    \vskip 2em
+    \noindent
+    
+    $if(authors-on-title)$
+    {\large \textsf{$for(author)$$author$$sep$, $endfor$}
+    }
+    $endif$
+    
+    \vfill
 
-\textsf{$date$}}
+    $if(logo)$
+    \noindent
+    \includegraphics[width=$if(logo-width)$$logo-width$$else$100$endif$pt, left]{$logo$}
+    $endif$
 
-$if(document-revision)$
-\textsf{Document Version: $document-revision$}
-$endif$
+    \textsf{$date$}}
 
-$if(total-pages-on-title)$
-\textsf{Total Pages: \pageref{LastPage}}
-$endif$
+    $if(document-revision)$
+    \textsf{Document Version: $document-revision$}
+    $endif$
 
-\end{flushleft}
-\end{titlepage}
-\restoregeometry
+    $if(total-pages-on-title)$
+    \textsf{Total Pages: \pageref{LastPage}}
+    $endif$
+
+    \end{flushleft}
+    \end{titlepage}
+
+    \restoregeometry
+    
+    % if we don't want to count the title page
+    $if(skip-title-page-number)$
+        \clearpage
+        \pagenumbering{arabic}
+    $endif$
+
 $endif$
 
 %%
