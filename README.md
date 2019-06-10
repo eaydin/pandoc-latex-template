@@ -26,6 +26,8 @@ logo: somelogo.png
 papersize: a4
 total-page-number: true
 total-pages-on-title: true
+total-pages-wording: "Number of total pages:"
+skip-title-page-number: true
 # header-left:
 # header-center: central
 # header-right: None
