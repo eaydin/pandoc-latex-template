@@ -38,6 +38,7 @@ logo-width: 150
 lof: true
 lof-own-page: true
 lof-title: "Custom Title For List of Figures"
+figure-name: "Yet Another Figure"
 ...
 ```
 
