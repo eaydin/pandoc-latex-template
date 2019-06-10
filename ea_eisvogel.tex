@@ -732,7 +732,7 @@ $else$
       $footer-right$
     $else$
       $if(total-page-number)$
-        \textbf{\thepage}/\pageref{LastPage}
+        \textbf{\thepage}/\pageref*{LastPage}
       $else$
         \thepage
       $endif$
@@ -802,9 +802,9 @@ $if(titlepage)$
     $if(total-pages-on-title)$
 
         $if(total-pages-wording)$
-        \textsf{$total-pages-wording$ \pageref{LastPage}}
+        \textsf{$total-pages-wording$ \pageref*{LastPage}}
         $else$
-        \textsf{Total Pages: \pageref{LastPage}}
+        \textsf{Total Pages: \pageref*{LastPage}}
         $endif$
         
     $endif$
@@ -893,10 +893,28 @@ $if(lof)$
     
     $if(lof-own-page)$
     \newpage
-    \listoffigures
+    
+    $if(lof-no-color)$
+      \bgroup
+      \hypersetup{linkcolor = black}
+      \listoffigures
+      \egroup
+      $else$
+      \listoffigures
+    $endif$
     \newpage
+    
     $else$
-    \listoffigures
+    
+      $if(lof-no-color)$
+        \bgroup
+        \hypersetup{linkcolor = black}
+        \listoffigures
+        \egroup
+      $else$
+        \listoffigures
+      $endif$
+      
     $endif$
 $endif$
 
