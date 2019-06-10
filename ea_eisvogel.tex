@@ -877,6 +877,11 @@ $if(lot)$
 \listoftables
 $endif$
 
+
+$if(figure-name)$
+\renewcommand{\figurename}{$figure-name$}
+$endif$
+
 $if(lof)$
 
     $if(lof-title)$
