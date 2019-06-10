@@ -797,7 +797,13 @@ $if(titlepage)$
     $endif$
 
     $if(total-pages-on-title)$
-    \textsf{Total Pages: \pageref{LastPage}}
+
+        $if(total-pages-wording)$
+        \textsf{$total-pages-wording$ \pageref{LastPage}}
+        $else$
+        \textsf{Total Pages: \pageref{LastPage}}
+        $endif$
+        
     $endif$
 
     \end{flushleft}
