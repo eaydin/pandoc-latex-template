@@ -35,6 +35,9 @@ footer-left: "Other than Authors?"
 # footer-center: None
 # footer-right: None
 logo-width: 150
+lof: true
+lof-own-page: true
+lof-title: "Custom Title For List of Figures"
 ...
 ```
 
