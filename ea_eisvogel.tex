@@ -876,9 +876,22 @@ $endif$
 $if(lot)$
 \listoftables
 $endif$
+
 $if(lof)$
-\listoffigures
+
+    $if(lof-title)$
+    \renewcommand{\listfigurename}{$lof-title$}
+    $endif$
+    
+    $if(lof-own-page)$
+    \newpage
+    \listoffigures
+    \newpage
+    $else$
+    \listoffigures
+    $endif$
 $endif$
+
 $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
