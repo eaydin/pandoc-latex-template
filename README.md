@@ -72,6 +72,22 @@ I usually prefer using the atmosphere-ocean csl located here: https://www.zotero
 pandoc report.md -o report.pdf --from markdown --template ea_eisvogel --listings --number-sections --bibliography=report.bib --csl=atmosphere-ocean.csl
 ```
 
+## Floating Elements
+
+Sometimes listings can float **over** normal text. This occurs at the beginning of the listing. In order to overcome this, a simple workaround is to but a backslash and a space after it between the text and the listing. Example
+
+```
+some text over here that gets buried under the listing. Note that backslash below has a space following it on the same line.
+
+\ 
+
+here goes the listing starting and ending with backticks...
+```
+
+## Footnotes
+
+Even though pandoc supports footnotes in a rather cool way, this template does not support using it in conjunction with the footer option set. So be careful about it. If I find a workaround, I'll update these lines.
+
 
 # Eisvogel
 
