@@ -21,6 +21,7 @@ titlepage-rule-color: "10000A"
 titlepage-rule-height: 2
 toc-own-page: true
 toc: true
+toc-title: "Alternative Description for Contents"
 logo: somelogo.png
 papersize: a4
 total-page-number: true
