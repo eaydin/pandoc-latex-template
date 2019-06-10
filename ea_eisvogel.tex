@@ -273,7 +273,10 @@ $else$
 $endif$
   breaklinks=true,
   pdfcreator={LaTeX via pandoc with the Eisvogel template}}
-\urlstyle{same} % disable monospaced font for URLs
+
+$if(url-style-same)$
+  \urlstyle{same} % disable monospaced font for URLs
+$endif$
 $if(verbatim-in-note)$
 \VerbatimFootnotes % allow verbatim text in footnotes
 $endif$
