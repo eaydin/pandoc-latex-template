@@ -62,7 +62,11 @@ If you want to name the references section, simply give the last section name th
 
 Please note that you need to install `pandoc-citeproc` package in order to generate citations.
 
-I usually prefer using the atmosphere-ocean csl located here: https://www.zotero.org/styles?q=id%3Aatmosphere-ocean
+I usually prefer using the atmosphere-ocean csl located here: https://www.zotero.org/styles?q=id%3Aatmosphere-ocean after downloading it, place it to `~/.csl/` to access easily. Now creating the PDF with references:
+
+```
+pandoc report.md -o report.pdf --from markdown --template ea_eisvogel --listings --number-sections --bibliography=report.bib --csl=atmosphere-ocean.csl
+```
 
 
 # Eisvogel
