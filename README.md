@@ -12,6 +12,7 @@ author: [M. Emre Ayın, Galileo Galilei]
 authors-on-title: true
 date: "15 June 2019"
 document-revision: "0.3.5"
+document-revision-wording: "Current Version:"
 keywords: [Uptime, Telescopes, Runtime Compilation]
 lang: "en"
 titlepage: true
