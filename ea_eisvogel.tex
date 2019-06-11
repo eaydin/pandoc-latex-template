@@ -860,6 +860,7 @@ $if(toc-title)$
 $endif$
   \tableofcontents[hideallsubsections]
 \end{frame}
+
 $if(toc-own-page)$
 \newpage
 $endif$
@@ -876,8 +877,51 @@ $endif$
 }
 $endif$
 $endif$
+
+
+% Should ve change the default caption for Tables?
+$if(table-name)$
+\renewcommand{\tablename}{$table-name$}
+$endif$
+
+% Do we have a list of tables?
 $if(lot)$
-\listoftables
+
+  % Should we change the List of Tables Title?
+  $if(lot-title)$
+    \renewcommand{\listtablename}{$lot-title$}
+  $endif$
+
+  % If the List of Tables has its own page
+  $if(lot-own-page)$
+    \newpage
+
+    % If the List of Tables has its own page and no color
+    $if(lot-no-color)$
+      \bgroup
+      \hypersetup{linkcolor = black}
+      \listoftables
+      \egroup
+
+    % If the List of Tables has its own page and also colors
+    $else$
+      \listoftables
+    $endif$
+    \newpage
+  
+  % If the List of Tables does not have its own page
+  $else$
+    % No own page and no colors
+    $if(lot-no-color)$
+      \bgroup
+      \hypersetup{linkcolor = black}
+      \listoftables
+      \egroup
+    % No own page but with colors
+    $else$
+      \listoftables
+    $endif$
+  $endif$
 $endif$
 
 
@@ -914,7 +958,7 @@ $if(lof)$
       $else$
         \listoffigures
       $endif$
-      
+
     $endif$
 $endif$
 
