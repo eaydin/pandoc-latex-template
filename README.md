@@ -38,9 +38,15 @@ logo-width: 150
 lof: true
 lof-own-page: true
 lof-title: "Custom Title For List of Figures"
+lof-no-color: true
 figure-name: "Yet Another Figure"
 url-style-same: false
-lof-no-color: true
+lot: true
+lot-title: "Alternative Name for List of Tables"
+lot-no-color: true
+lot-own-page: true
+table-name: "Yet Another Table"
+linkcolor: blue
 ...
 ```
 
