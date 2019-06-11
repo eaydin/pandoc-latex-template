@@ -795,17 +795,29 @@ $if(titlepage)$
 
     \textsf{$date$}}
 
+
+    % Show document revision number on title page
     $if(document-revision)$
-    \textsf{Document Version: $document-revision$}
+
+      % Use custom wording
+      $if(document-revision-wording)$
+        \textsf{$document-revision-wording$ $document-revision$}
+      % Use default wording
+      $else$
+        \textsf{Document Version: $document-revision$}
+      $endif$
     $endif$
 
+    % Show total page number on title page
     $if(total-pages-on-title)$
 
-        $if(total-pages-wording)$
+      % Use custom wording
+      $if(total-pages-wording)$
         \textsf{$total-pages-wording$ \pageref*{LastPage}}
-        $else$
+      % Use default wording
+      $else$
         \textsf{Total Pages: \pageref*{LastPage}}
-        $endif$
+      $endif$
         
     $endif$
 
