@@ -47,7 +47,9 @@ lot-title: "Alternative Name for List of Tables"
 lot-no-color: true
 lot-own-page: true
 table-name: "Yet Another Table"
-linkcolor: blue
+linkcolor: airforceblue
+urlcolor: coolblack
+
 ...
 ```
 
@@ -97,6 +99,10 @@ here goes the listing starting and ending with backticks...
 
 Even though pandoc supports footnotes in a rather cool way, this template does not support using it in conjunction with the footer option set. So be careful about it. If I find a workaround, I'll update these lines.
 
+
+## New Colors
+
+New colors to the template can be added easily. Colors are defined right below the `\usepackage{xcolor}` line. Here, simply define a color. A good list of colors that can be easily used in LaTeX can be found here: http://latexcolor.com/
 
 # Eisvogel
 
