@@ -724,10 +724,19 @@ $else$
 \usepackage{fancyhdr}
 \fancypagestyle{eisvogel-header-footer}{
   \fancyhead{}
-  \fancyfoot{}
+  $if(disable-footer)$
+  $else$
+  	\fancyfoot{}
+  $endif$
   \lhead[$if(header-right)$$header-right$$else$$date$$endif$]{$if(header-left)$$header-left$$else$$title$$endif$}
   \chead[$if(header-center)$$header-center$$else$$endif$]{$if(header-center)$$header-center$$else$$endif$}
   \rhead[$if(header-left)$$header-left$$else$$title$$endif$]{$if(header-right)$$header-right$$else$$date$$endif$}
+  \renewcommand{\headrulewidth}{0.4pt}
+  
+
+  $if(disable-footer)$
+  $else$
+
   \lfoot[$if(footer-right)$$footer-right$$else$\thepage$endif$]{$if(footer-left)$$footer-left$$else$$for(author)$$author$$sep$, $endfor$$endif$}
   \cfoot[$if(footer-center)$$footer-center$$else$$endif$]{$if(footer-center)$$footer-center$$else$$endif$}
   \rfoot[
@@ -751,8 +760,8 @@ $else$
       $endif$
     $endif$
     }
-  \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0.4pt}
+  $endif$
 }
 \pagestyle{eisvogel-header-footer}
 $endif$
