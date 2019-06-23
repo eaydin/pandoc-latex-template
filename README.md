@@ -29,6 +29,7 @@ total-page-number: true
 total-pages-on-title: true
 total-pages-wording: "Number of total pages:"
 skip-title-page-number: true
+disable-footer: false
 # header-left:
 # header-center: central
 # header-right: None
